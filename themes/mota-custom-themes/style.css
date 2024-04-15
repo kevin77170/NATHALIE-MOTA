@@ -17,3 +17,32 @@ Twenty Twenty-One WordPress Theme, (C) 2020 WordPress.org
 Twenty Twenty-One is distributed under the terms of the GNU GPL.
 */
 
+html,body{
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0% !important;
+}
+
+@font-face {
+    font-family: 'space-mono-italic';
+    font-style: italic;
+    src: local('Space Mono'), url('/assets/font/SpaceMono-Italic.woff2');
+}
+
+@font-face {
+    font-family: 'space-mono-bold';
+    font-style: bold;
+    src: local('Space Mono') url('/assets/font/SpaceMono-Bold.woff2');
+}
+
+@font-face {
+    font-family: 'space-mono-bold-italic';
+    font-style: bold italic;
+    src: local('Space Mono') url('/assets/font/SpaceMono-BoldItalic.woff2');
+}
+
+@font-face {
+    font-family: 'space-mono-regular';
+    font-style: normal;
+    src: local('Space Mono') url('/assets/font/SpaceMono-Regular.woff2');
+}
