@@ -4,7 +4,8 @@
 
 function theme_enqueue_styles() {
     wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
-    wp_enqueue_style( 'main-style', get_stylesheet_directory_uri() . '/assets/css/main.css' );
+    wp_enqueue_style( 'header-style', get_stylesheet_directory_uri() . '/assets/css/header.css' );
+    wp_enqueue_style( 'footer-style', get_stylesheet_directory_uri() . '/assets/css/footer.css' );
     wp_enqueue_script( 'script-js', get_stylesheet_directory_uri() . '/assets/js/script.js' );
 }
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
@@ -19,10 +20,15 @@ add_theme_support( 'custom-logo', array(
 add_action('after_setup_theme', 'nathalie_custom_support');
 
 
-function register_my_menu() {
-    register_nav_menu( 'main-menu', __( 'Menu principal', 'text-domain' ) );
+// Enregistrement des emplacements de menu
+function register_custom_menus() {
+    register_nav_menus( array(
+        'primary' => 'Main menu', // Emplacement du menu principal
+        'footer'  => 'Menu footer', // Emplacement du menu pied de page
+    ) );
 }
-add_action( 'after_setup_theme', 'register_my_menu' );
-?>
+add_action( 'after_setup_theme', 'register_custom_menus' );
+
+
 
 

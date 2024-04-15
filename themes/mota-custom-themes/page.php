@@ -26,7 +26,7 @@ endwhile; // End of the loop.
 <main id="primary" class="site-main">
         <div class="pages-content">
             <?= get_post_field('post_content', $post->ID) ?>
-            <h1>Bonne journée</h1>
+            <h1>page.php</h1>
         </div>
 </main>
 
