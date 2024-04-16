@@ -1,1 +1,0 @@
-console.log('Le script est chargé !');
