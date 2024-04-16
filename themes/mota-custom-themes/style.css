@@ -24,25 +24,56 @@ html,body{
 }
 
 @font-face {
-    font-family: 'space-mono-italic';
+    font-family: 'SpaceMono-Italic';
     font-style: italic;
     src: local('Space Mono'), url('/assets/font/SpaceMono-Italic.woff2');
 }
 
 @font-face {
-    font-family: 'space-mono-bold';
+    font-family: 'SpaceMono-Bold';
     font-style: bold;
     src: local('Space Mono') url('/assets/font/SpaceMono-Bold.woff2');
 }
 
 @font-face {
-    font-family: 'space-mono-bold-italic';
+    font-family: 'SpaceMono-BoldItalic';
     font-style: bold italic;
     src: local('Space Mono') url('/assets/font/SpaceMono-BoldItalic.woff2');
 }
 
 @font-face {
-    font-family: 'space-mono-regular';
+    font-family: 'SpaceMono-Regular';
     font-style: normal;
     src: local('Space Mono') url('/assets/font/SpaceMono-Regular.woff2');
 }
+
+@font-face {
+    font-family: 'Poppins-Bold';
+    font-style: bold;
+    src: local('Poppins')url('/assets/font/Poppins-Bold.woff2');
+}
+
+@font-face {
+    font-family: 'Poppins-BoldItalic';
+    font-style: bold italic;
+    src: local('Poppins')url('/assets/font/Poppins-BoldItalic.woff2');
+}
+
+@font-face {
+    font-family: 'Poppins-Italic';
+    font-style: italic;
+    src: local('Poppins')url('/assets/font/Poppins-Italic.woff2');
+}
+
+@font-face {
+    font-family: 'Poppins-Medium';
+    font-style: medium;
+    src: local('Poppins')url('/assets/font/Poppins-Medium.woff2');
+}
+
+@font-face {
+    font-family: 'Poppins-Regular';
+    font-style: normal;
+    src: local('Poppins')url('/assets/font/Poppins-Regular.woff2');
+}
+
