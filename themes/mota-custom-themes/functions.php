@@ -11,7 +11,9 @@ function theme_enqueue_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 
+
 function nathalie_custom_support () {
+add_theme_support( 'post-thumbnails' );
 add_theme_support( 'title-tag' );
 add_theme_support( 'custom-logo', array(
     'height' => 14,
