@@ -5,5 +5,5 @@
   </div>
 </div>
 
-<script src="modal.js"></script>
+<script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/modal.js"></script>
 
