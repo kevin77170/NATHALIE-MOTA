@@ -115,6 +115,14 @@
         width: 100%;
     }
 
+    .container {
+        width: 100%;
+        max-width: 1190px;
+        margin: auto;
+        padding: 30px 10px 0;
+        font-family: 'Space Mono', monospace;
+    }
+
     body section article div.navigation-miniature{
         width: 70%;
         display: flex;
@@ -146,6 +154,14 @@
         flex-direction: column;
     }
 
+    .container {
+        width: 100%;
+        max-width: 1190px;
+        margin: auto;
+        padding: 30px 0px 0;
+        font-family: 'Space Mono', monospace;
+    }
+
     .logo-header{
         margin-right: 0;
     }
@@ -155,6 +171,7 @@
         flex-direction: column;
         position: relative;
         top: 55em;
+        left: 0px;
         align-items: center;
     }
 
@@ -185,7 +202,7 @@
     .contact p {
         font-size: 25px;
         position: relative;
-        right: 1.5em;
+        right: 0.5em;
         top: 1em;
     }
 
@@ -214,12 +231,21 @@
         flex-direction: column;
     }
 
+    .container {
+        width: 100%;
+        max-width: 1190px;
+        margin: auto;
+        padding: 30px 0px 0;
+        font-family: 'Space Mono', monospace;
+    }
+
     .photo-container img {
         bottom: 30em;
-        left: 2em;
+        left: 42px;
     }
 
     .title-photo {
+        margin-left: -25px;
         font-size: 46px;
         line-height: 48px;
     }
@@ -230,12 +256,19 @@
 
     .meta {
         font-size: 14px;
-        left: -3em;
+        left: -4.5em;
     }
 
     .contact p {
+        right: 3em;
         font-size: 14px;
         top: 2em;
+    }
+
+    .btn-contact {
+        width: 320px;
+        height: 60px;
+        font-size: 15px;
     }
 
     body section article div.navigation-miniature{
@@ -250,10 +283,26 @@
 
     .contact p{
         top: 7em;
-        left: -1em;
+        left: -2em;
+    }
+
+    .photo-container img {
+        bottom: 30em;
+        left: 40px;
+    }
+
+    .title-photo {
+        margin-left: -15px;
+    }
+
+    .meta {
+        font-size: 14px;
+        left: -3.5em;
     }
 
     .btn-contact {
+        width: 295px;
+        height: 55px;
         font-size: 12px;
     }
 }
