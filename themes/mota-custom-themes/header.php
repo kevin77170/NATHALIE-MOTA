@@ -32,7 +32,26 @@
                         ));
                 ?>
             </nav>
-        </div>   
+                <!-- intégration du menu burger -->
+                   <div id="navbar" class="navbar" aria-controls="primary-menu" aria-expanded="false">
+        <button class="navbar-burger navbar-open" aria-expanded="true">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+        </button>        
+        <div class="navbar-content">
+            <ul>
+                <li class="navbar-acceuil">
+                <a href="page accueil">CCUEIL</a>
+                </li>
+                <li class="navbar-a-propos">
+                <a href="page a propos">À PROPOS</a>
+                </li>
+                <li class="navbar-contact">
+                <a href="page contact">CONTACT</a>
+                </li>
+            </ul> 
+        </div>  
     </header>
 </body>
 </html>

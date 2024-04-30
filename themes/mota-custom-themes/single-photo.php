@@ -67,47 +67,138 @@ if (is_array($type) || is_object($type)) {
             <p>Cette photo vous intéresse ?</p>
             <button class="btn btn-contact menu-item-118" data-reference="<?php echo esc_attr($references); ?>">Contact</button>
         </div>
-        <!-- slider miniature -->
+        <!-- miniature et fleches -->
         <div class="navigation-miniature">
-            <?php
-            $current_post_id = get_the_ID();
+    <?php
+    $current_post_id = get_the_ID();
 
-            $args_thumbnails_slider = array(
-                'post_type' => 'photo',
-                'posts_per_page' => 2,
-                'post__not_in' => array($current_post_id), // Exclure l'id de la publication actuelle
-            );
+    $args_before = array(
+        'post_type'      => 'photo',
+        'posts_per_page' => 1,
+        'orderby'        => 'date',
+        'order'          => 'DESC', // Du plus récent au moins récent
+        'date_query'     => array(
+            array(
+                'before' => get_the_date('c', $current_post_id) // c pour le format ISO 8601
+            )
+        ),
+    );
 
-            $thumbnails_slider = new WP_Query($args_thumbnails_slider);
+    $previous_post_query = new WP_Query($args_before);
 
-            if ($thumbnails_slider->have_posts()) {
-                while ($thumbnails_slider->have_posts()) {
-                    $thumbnails_slider->the_post();
+    $args_after = array(
+        'post_type'      => 'photo',
+        'posts_per_page' => 1,
+        'orderby'        => 'date',
+        'order'          => 'ASC', // Du moins récent au plus récent
+        'date_query'     => array(
+            array(
+                'after' => get_the_date('c', $current_post_id) // c pour le format ISO 8601
+            )
+        ),
+    );
 
-                    // récupere les infos : image mise en avant par rapport à l'id (thumbnail_url), url du post, titre
-                    $thumbnail_url_id = get_the_post_thumbnail_url(get_the_ID());
-                    $post_title = get_the_title();
-                    $post_permalink = get_permalink();
+    $next_post_query = new WP_Query($args_after);
+
+    // Pour l'article précédent
+    if ($previous_post_query->have_posts()) {
+        while ($previous_post_query->have_posts()) {
+            $previous_post_query->the_post();
+            // Affichage des informations de l'article, comme le titre, l'image, etc.
+            $thumbnail_url_id = get_the_post_thumbnail_url(get_the_ID());
+            $post_title = get_the_title();
+            $post_permalink = get_permalink();
             ?>
-                                <a href="<?php echo $post_permalink; ?>">
-                        <img class="thumbnails" src="<?php echo $thumbnail_url_id; ?>" alt="<?php echo $post_title; ?>">
-                    </a>
+            <a href="<?php echo $post_permalink; ?>">
+                <img class="thumbnails img-before" src="<?php echo $thumbnail_url_id; ?>" alt="<?php echo $post_title; ?>">
+            </a>
             <?php
-                }
-                wp_reset_postdata();
+        }
+    } else {
+        // Si aucune photo précédente, afficher la première photo
+        $args_first = array(
+            'post_type'      => 'photo',
+            'posts_per_page' => 1,
+            'orderby'        => 'date',
+            'order'          => 'DESC', // Du moins récent au plus récent
+        );
+
+        $first_post_query = new WP_Query($args_first);
+
+        if ($first_post_query->have_posts()) {
+            while ($first_post_query->have_posts()) {
+                $first_post_query->the_post();
+                // Affichage des informations de l'article, comme le titre, l'image, etc.
+                $thumbnail_url_id = get_the_post_thumbnail_url(get_the_ID());
+                $post_title = get_the_title();
+                $post_permalink = get_permalink();
+                ?>
+                <a href="<?php echo $post_permalink; ?>">
+                    <img class="thumbnails img-before" src="<?php echo $thumbnail_url_id; ?>" alt="<?php echo $post_title; ?>">
+                </a>
+                <?php
             }
+        }
+
+        // Réinitialisation des données globales de post
+        wp_reset_postdata();
+    }
+
+
+    // Pour l'article suivant
+    if ($next_post_query->have_posts()) {
+        while ($next_post_query->have_posts()) {
+            $next_post_query->the_post();
+            // Affichage des informations de l'article, comme le titre, l'image, etc.
+            $after_thumbnail_url_id = get_the_post_thumbnail_url(get_the_ID());
+            $post_title = get_the_title();
+            $after_permalink = get_permalink();
             ?>
-            <div class="arrows">
-                <svg class="arrow-left" xmlns="http://www.w3.org/2000/svg" width="26" height="8" viewBox="0 0 26 8" fill="none">
-                    <path d="M0.646447 3.64645C0.451184 3.84171 0.451184 4.15829 0.646447 4.35355L3.82843 7.53553C4.02369 7.7308 4.34027 7.7308 4.53553 7.53553C4.7308 7.34027 4.7308 7.02369 4.53553 6.82843L1.70711 4L4.53553 1.17157C4.7308 0.976311 4.7308 0.659728 4.53553 0.464466C4.34027 0.269204 4.02369 0.269204 3.82843 0.464466L0.646447 3.64645ZM1 4.5H26V3.5H1V4.5Z" fill="black" />
-                </svg>
+            <a href="<?php echo $after_permalink; ?>">
+                <img class="thumbnails img-after" src="<?php echo $after_thumbnail_url_id; ?>" alt="<?php echo $post_title; ?>">
+            </a>
+            <?php
+        }
+    } else {
+        // Si aucune photo suivante, afficher la dernière photo
+        $args_last = array(
+            'post_type'      => 'photo',
+            'posts_per_page' => 1,
+            'orderby'        => 'date',
+            'order'          => 'ASC', // Du plus récent au moins récent
+        );
 
-                <svg class="arrow-right" xmlns="http://www.w3.org/2000/svg" width="26" height="8" viewBox="0 0 26 8" fill="none">
-                    <path d="M25.3536 3.64645C25.5488 3.84171 25.5488 4.15829 25.3536 4.35355L22.1716 7.53553C21.9763 7.7308 21.6597 7.7308 21.4645 7.53553C21.2692 7.34027 21.2692 7.02369 21.4645 6.82843L24.2929 4L21.4645 1.17157C21.2692 0.976311 21.2692 0.659728 21.4645 0.464466C21.6597 0.269204 21.9763 0.269204 22.1716 0.464466L25.3536 3.64645ZM25 4.5H0V3.5H25V4.5Z" fill="black" />
-                </svg>
-            </div>
+        $last_post_query = new WP_Query($args_last);
+
+        if ($last_post_query->have_posts()) {
+            while ($last_post_query->have_posts()) {
+                $last_post_query->the_post();
+                // Affichage des informations de l'article, comme le titre, l'image, etc.
+                $after_thumbnail_url_id = get_the_post_thumbnail_url(get_the_ID());
+                $post_title = get_the_title();
+                $after_permalink = get_permalink();
+?>
+                <a href="<?php echo $after_permalink; ?>">
+                    <img class="thumbnails img-after" src="<?php echo $after_thumbnail_url_id; ?>" alt="<?php echo $post_title; ?>">
+                </a>
+                <?php
+            }
+        }
+
+        // Réinitialisation des données globales de post
+        wp_reset_postdata();
+    }
+    ?>
+    <div class="arrows">
+        <div class="arrow-left">
+            <img src="<?php echo  get_stylesheet_directory_uri() . '/assets/img/arrow-left.png'; ?>" alt="logo fleche gauche">
         </div>
-
-    </article>
+        <div class="arrow-right">
+            <img src="<?php echo  get_stylesheet_directory_uri() . '/assets/img/arrow-right.png'; ?>" alt="logo fleche droite">
+        </div>
+    </div>
+</div>
+</article>
 </section>
+<script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/miniature.js"></script>
 <?php get_footer();?>
