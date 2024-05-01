@@ -7,8 +7,7 @@
                 'menu_class' => 'footer',
             )); 
             get_template_part('./assets/template-part/modal-contact'); // ajout du template modal-contact -->
-        ?>
-        
+        ?>       
     </nav>
 </footer>
 </body>

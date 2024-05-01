@@ -224,7 +224,6 @@ if (is_array($type) || is_object($type)) {
                     while ($related_photos->have_posts()) {
                         $related_photos->the_post();
 
-
                         // structure du catalogue
                         get_template_part('/assets/template-part/catalogue-photos');
                     }

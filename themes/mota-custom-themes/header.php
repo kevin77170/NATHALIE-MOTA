@@ -51,7 +51,8 @@
                 <a href="page contact">CONTACT</a>
                 </li>
             </ul> 
-        </div>  
+        </div> 
+         
     </header>
 </body>
 </html>

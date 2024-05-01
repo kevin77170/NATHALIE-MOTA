@@ -29,7 +29,6 @@ endwhile; // End of the loop.
             <h1>page.php</h1>
         </div>
 </main>
-
 <?php
 get_footer();
 ?>
