@@ -198,40 +198,57 @@ if (is_array($type) || is_object($type)) {
     </div>
 </div>
         <!-- photos apparentée à la categorie -->
-        <div class="photo-apparentee">
-            <h3>Vous aimerez aussi</h3>
-            <div class="catalogue-photos">
+        <?php
+// Nouvelle instance de WP_Query pour récupérer 2 posts de la même catégorie que le post actuel
+$args_related_photos = array(
+    'post_type' => 'photo',
+    'posts_per_page' => 2,  
+    'orderby' => 'rand',
+    'tax_query' => array(
+        array(
+            'taxonomy' => 'categorie',
+            'field' => 'slug',
+            'terms' => $categorie_name,
+        ),
+    ),
+    'meta_query' => array(
+        array(
+            'key' => 'references',
+            'value' => $references,
+            'compare' => '!=', // Exclut les posts avec la même référence
+        ),
+    ),
+);
 
-                <?php
-                // Nouvelle instance de WP_Query pour récupérer 2 posts de la meme catégorie que le post actuel 
-                $args_related_photos = array(
-                    'post_type' => 'photo',
-                    'posts_per_page' => 2,
-                    'post__not_in' => array(get_the_ID()),
-                    'orderby' => 'rand',
-                    'tax_query' => array(
-                        array(
-                            'taxonomy' => 'categorie',
-                            'field' => 'slug',
-                            'terms' => $categorie_name,
-                        ),
-                    ),
-                );
+$related_photos = new WP_Query($args_related_photos);
 
-                $related_photos = new WP_Query($args_related_photos);
+// Compter le nombre de publications dans la catégorie
+$count_posts = wp_count_posts('photo');
+$num_posts = $count_posts->publish;
 
-                if ($related_photos->have_posts()) {
-                    while ($related_photos->have_posts()) {
-                        $related_photos->the_post();
+if ($related_photos->have_posts()) :
+    
 
-                        // structure du catalogue
-                        get_template_part('/assets/template-part/catalogue-photos');
-                    }
-                    wp_reset_postdata();
-                }
-                ?>
-            </div>
-        </div>
+
+?>
+<div class="photo-apparentee">
+    <h3>Vous aimerez aussi</h3>
+    <div class="catalogue-photos">
+        <?php
+        while ($related_photos->have_posts()) :
+            $related_photos->the_post();
+            // Structure du catalogue
+            get_template_part('/assets/template-part/catalogue-photos');
+        endwhile;
+        ?>
+    </div>
+</div>
+
+<?php
+endif;
+
+wp_reset_postdata();
+?>
 </article>
 </section>
 <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/miniature.js"></script>

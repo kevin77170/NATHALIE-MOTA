@@ -5,30 +5,42 @@
     align-items: center;
     justify-content: center;
     border-top: 1px solid black;
+    margin-top: 20px;
 }
 
 #menu-menu-footer{
     width: 722px;
     height: 40px;
-    margin: 0;
+    margin-left: -35vh;
     padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     list-style: none;
-    font-family: 'Space Mono', monospace;
+    font-family: 'Space Mono';
     font-size: 16px;
 }
 
 footer nav ul li a {
+    position: relative;
     color: black;
     text-decoration: none;
 }
 
 #menu-item-127{
     margin: 0 86px 0 86px;
-    
+
 }
+
+#footer > nav > p{
+    font-family: 'Space Mono';
+    margin-top: -8vh;
+    display: flex;
+    justify-content: end;
+    position: absolute;
+    right: 370px;
+}
+
 
 @media screen and (max-width: 425px) {
     #footer{

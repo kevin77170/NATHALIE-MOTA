@@ -5,12 +5,10 @@
     <meta charset="UTF+1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php wp_head(); ?>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 </head>
 <body>
-    
-</body>
-</html>
-    <header>
+    <header class="main-menu" role="navigation">
         <div class="logo">
         <?php
             // Vérification et affichage du logo personnalisé du site
@@ -32,27 +30,22 @@
                         ));
                 ?>
             </nav>
-                <!-- intégration du menu burger -->
-                   <div id="navbar" class="navbar" aria-controls="primary-menu" aria-expanded="false">
-        <button class="navbar-burger navbar-open" aria-expanded="true">
-                <span class="line"></span>
-                <span class="line"></span>
-                <span class="line"></span>
-        </button>        
-        <div class="navbar-content">
-            <ul>
-                <li class="navbar-acceuil">
-                <a href="page accueil">CCUEIL</a>
-                </li>
-                <li class="navbar-a-propos">
-                <a href="page a propos">À PROPOS</a>
-                </li>
-                <li class="navbar-contact">
-                <a href="page contact">CONTACT</a>
-                </li>
-            </ul> 
-        </div> 
-         
-    </header>
+            <!-- menu mobile -->
+            <div id="navbar" class="navbar toggled" aria-controls="primary-menu" aria-expanded="false"> 
+                <button id="navbar-burger" class="navbar-burger navbar-open" aria-expanded="true"> 
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </button>
+            <nav id="menu-header" class="menu-header">
+            <?php
+                 wp_nav_menu(array(
+	            'theme_location' => 'primary',
+	            'menu_class' => 'menu',
+	        ));
+            ?>
+            </nav>
+</header>
+<script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/menu-burger.js"></script>
 </body>
 </html>
