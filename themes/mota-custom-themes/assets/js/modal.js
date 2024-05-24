@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
         referenceField.value = ""; // Réinitialiser la valeur du champ de référence à une chaîne vide
       }
     };
+    
   
     // Ouvrir le modal lorsque le lien est cliqué
     menuLinks.forEach(function(link) {
@@ -24,3 +25,4 @@ document.addEventListener("DOMContentLoaded", function() {
       });
     });
   });
+
