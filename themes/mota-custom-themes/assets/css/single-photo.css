@@ -1,4 +1,4 @@
-.container{
+.container {
     width: 100%;
     max-width: 1191px;
     margin: auto;
@@ -13,7 +13,10 @@
     grid-template-rows: auto 130px auto;
     gap: 0px 10px;
     grid-auto-flow: row;
-    grid-template-areas: "meta photo" "contact navigation-miniature" "photo-apparentee photo-apparentee";
+    grid-template-areas: 
+        "meta photo" 
+        "contact navigation-miniature" 
+        "photo-apparentee photo-apparentee";
     text-transform: uppercase;
 }
 
@@ -30,7 +33,6 @@
     font-size: 66px;
     line-height: 58px;
     width: 60%;
-
 }
 
 .meta-photo {
@@ -65,9 +67,8 @@
 
 .arrows {
     display: flex;
-
 }
-  
+
 .arrow-left,
 .arrow-right {
     margin-right: 44px;
@@ -77,14 +78,14 @@
 }
 
 .arrow-right img,
-.arrow-left img{
+.arrow-left img {
     position: absolute;
     margin-top: 0px;
     margin-left: 360px;
     cursor: pointer;
 }
-  
-.navigation-miniature{
+
+.navigation-miniature {
     position: relative;
     width: 100%;
     display: flex;
@@ -99,14 +100,14 @@
     margin: 0 0 0 70px;
 }
 
-.navigation-miniature a{
+.navigation-miniature a {
     opacity: 1;
     transition: all 0.5s ease-in-out;
     position: relative;
     left: 440px;
 }
 
-.thumbnails.img-before{
+.thumbnails.img-before {
     width: 81px;
     height: 71px;
     position: absolute;
@@ -114,13 +115,12 @@
     margin-top: -55px;
 }
 
-.thumbnails.img-after{
+.thumbnails.img-after {
     margin-top: -35px;
 }
 
 @media screen and (max-width: 1024px) {
-    
-    .photo-container{
+    .photo-container {
         width: 100%;
     }
 
@@ -132,11 +132,11 @@
         font-family: 'Space Mono', monospace;
     }
 
-    body section article div.contact p{
+    body section article div.contact p {
         font-size: 15px;
     }
 
-    body section article div.navigation-miniature{
+    body section article div.navigation-miniature {
         width: 70%;
         display: flex;
         align-items: center;
@@ -150,25 +150,26 @@
         margin: 0 0 0 15px;
     }
 
-    .navigation-miniature a{
+    .navigation-miniature a {
         opacity: 0;
         transition: all 0.5s ease-in-out;
         position: relative;
         left: 18em;
     }
 
-    .arrows{
+    .arrows {
         width: 0;
         height: 0;
         margin-right: 150px;
     }
 
-    .arrow-right img, 
+    .arrow-right img,
     .arrow-left img {
         margin-left: 300px;
         margin-top: -40px;
     }
 }
+
 @media screen and (max-width: 768px) {
     .content {
         display: flex !important;
@@ -183,7 +184,7 @@
         font-family: 'Space Mono', monospace;
     }
 
-    .logo-header{
+    .logo-header {
         margin-right: 0;
     }
 
@@ -191,7 +192,7 @@
         display: flex;
         flex-direction: column;
         position: relative;
-        top: 32em;
+        top: 600px;
         left: 0px;
         align-items: center;
     }
@@ -217,6 +218,7 @@
     }
 
     .contact {
+        padding: 93px 0 10px;
         gap: 3em;
         flex-direction: column;
     }
@@ -237,11 +239,11 @@
         width: 50%;
     }
 
-    .arrows{
+    .arrows {
         display: none;
     }
 
-    body section article div.navigation-miniature{
+    body section article div.navigation-miniature {
         display: none;
     }
 }
@@ -261,23 +263,29 @@
     }
 
     .photo-container img {
-        bottom: 25em;
+        bottom: 370px;
         left: 45px;
     }
 
     .title-photo {
-        margin-left: -25px;
+        margin-left: 0px;
+        margin-bottom: 0;
         font-size: 46px;
         line-height: 48px;
     }
 
     .meta-photo {
-        top: 30em;
+        top: 585px;
     }
 
     .meta {
         font-size: 14px;
-        left: -4.5em;
+        left: -50px;
+        bottom: -30px;
+    }
+
+    .contact {
+        padding: 130px 0 10px;
     }
 
     .contact p {
@@ -297,31 +305,26 @@
         left: 0px;
         font-size: 18px;
         position: relative;
-        top: -1em;
+        top: -10px;
     }
 
-    body section article div.navigation-miniature{
+    body section article div.navigation-miniature {
         display: none;
     }
-}  
+}
 
 @media screen and (max-width: 375px) {
-
     .content {
         margin-top: 40px !important;
     }
 
-    .contact{
+    .contact {
+        padding: 130px 0 10px;
         gap: 2em;
     }
 
-    .contact p{
-        top: 7em;
-        left: -2em;
-    }
-
     .photo-container img {
-        bottom: 29em;
+        bottom: 450px;
         left: 40px;
     }
 
@@ -331,11 +334,12 @@
 
     .meta {
         font-size: 14px;
-        left: -3.5em;
+        left: -40px;
     }
 
     .meta-photo {
-        top: 32em;
+        padding-bottom: 45px;
+        top: 590px;
     }
 
     .btn-contact {

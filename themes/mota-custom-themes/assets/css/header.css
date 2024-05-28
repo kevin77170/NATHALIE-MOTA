@@ -7,7 +7,7 @@ header {
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.09);
 }
 
-.logo{
+.logo {
     display: flex;
     margin-left: 200px;
     margin-right: 550px;
@@ -23,7 +23,7 @@ header nav ul li a {
 
 header nav ul li a:hover {
     font-weight: 700;
-  }
+}
 
 header nav ul {
     width: 480px;
@@ -33,31 +33,32 @@ header nav ul {
     list-style: none;
 }
 
-#menu-item-117{
+#menu-item-117 {
     margin: 0 45px 0 45px;
 }
 
-#navbar{
+#navbar {
     display: none;
 }
 
 @media screen and (max-width: 1025px) {
-
-    #navbar{
+    #navbar {
         display: none;
     }
-    .logo{
+
+    .logo {
         margin-left: 150px;
         margin-right: 200px;
     }
 }
 
 @media screen and (max-width: 769px) {
-    .logo{
+    .logo {
         margin-right: 50px;
         margin-left: 100px;
     }
-    #menu-menu-principal{
+
+    #menu-menu-principal {
         display: none;
     }
 
@@ -66,15 +67,14 @@ header nav ul {
         min-height: 5.5vh;
         position: sticky;
         z-index: 5;
-      }
-      #navbar {
+    }
+
+    #navbar {
         height: 70px;
-      }
-      #navbar {
         display: flex;
     }
 
-      .navbar.toggled ul{
+    .navbar.toggled ul {
         flex-direction: column;
         padding: 3%;
         background: #E00000;
@@ -88,17 +88,21 @@ header nav ul {
         font-size: 30px;
         height: 100vh;
         justify-content: center;
-      }
-      header nav ul li a {
+    }
+
+    header nav ul li a {
         color: white;
         font-size: 38px;
     }
-    #menu-menu-principal-1 > li.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-117{
+
+    #menu-menu-principal-1 > li.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-117 {
         margin: 18px;
     }
+
     .menu-main-menu-container a:hover {
         font-weight: 700;
     }
+
     .navbar-burger {
         position: absolute;
         right: 1em;
@@ -111,56 +115,57 @@ header nav ul {
         background: none;
         cursor: pointer;
         border: none;
-      }
-      #navbar-burger .menu-main-menu-container {
+    }
+
+    #navbar-burger .menu-main-menu-container {
         width: 100vw;
-      }
-      
-      /*** Styles pour les lignes du bouton burger ***/
-      .navbar-burger .line {
+    }
+
+    /*** Styles pour les lignes du bouton burger ***/
+    .navbar-burger .line {
         width: 100%;
         height: 3px;
         background-color: #000;
-      }
-      .navbar-burger.close .line:first-child{
+    }
+
+    .navbar-burger.close .line:first-child {
         transform: rotate(45deg) translate3d(14px, 5px, 0) !important;
-      }
-      
-      .navbar-burger.close .line:nth-child(2) {
+    }
+
+    .navbar-burger.close .line:nth-child(2) {
         opacity: 0 !important;
-      }
-      
-      .navbar-burger.close span.line:last-child {
+    }
+
+    .navbar-burger.close span.line:last-child {
         transform: rotate(-45deg) translate3d(13px, -4px, 0) !important;
-      }
-      .navbar-burger.close {
+    }
+
+    .navbar-burger.close {
         border: none;
         display: flex;
-      }
-      /*** Styles pour le menu déroulant ***/
-      .menu-header {
-        display: none;
-      }
-    
-      /*** Affichage du menu déroulant lorsqu'il est ouvert ***/
-      .navbar-content.active {
-        display: block;
-      }
+    }
 
+    /*** Styles pour le menu déroulant ***/
+    .menu-header {
+        display: none;
+    }
+
+    /*** Affichage du menu déroulant lorsqu'il est ouvert ***/
+    .navbar-content.active {
+        display: block;
+    }
 }
 
 @media screen and (max-width: 425px) {
-    .logo{
+    .logo {
         margin-top: 15px;
         margin-left: 40px;
     }
 }
 
 @media screen and (max-width: 375px) {
-
-    .logo{
+    .logo {
         margin-top: 15px;
         margin-left: 40px;
     }
 }
-
