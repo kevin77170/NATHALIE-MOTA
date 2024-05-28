@@ -94,7 +94,6 @@
                             </select>
                         <?php endif; ?>
                     </div>
-
                     <div class="annee">
                         <!-- Menu déroulant pour le tri par date  -->
                         <select name="annee" id="annee" class="js-example-basic-single select2-dropdown-below">
@@ -110,12 +109,10 @@
                             <option value="anciennes">Plus anciennes</option>
                         </select>
                     </div>
-
                 </div>
             </form>
-        </div>
-        
-        </section>
+        </div>       
+    </section>
 <section class="photos" data-page="1">
     <?php
     // Arguments de la requête pour récupérer les publications du type de contenu personnalisé

@@ -59,7 +59,6 @@ function load_more_photos() {
     $format_filter = isset($_POST['format']) ? sanitize_text_field($_POST['format']) : '';
     $annee_filter = isset($_POST['annee']) ? sanitize_text_field($_POST['annee']) : '';
 
-
     $args = array(
         'post_type' => 'photo',
         'posts_per_page' => 8,

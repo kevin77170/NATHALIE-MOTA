@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     };
     
-  
     // Ouvrir le modal lorsque le lien est cliqué
     menuLinks.forEach(function(link) {
       link.addEventListener('click', function(event) {

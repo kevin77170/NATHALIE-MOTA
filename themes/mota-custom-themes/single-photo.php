@@ -143,7 +143,6 @@ if (is_array($type) || is_object($type)) {
         wp_reset_postdata();
     }
 
-
     // Pour l'article suivant
     if ($next_post_query->have_posts()) {
         while ($next_post_query->have_posts()) {
@@ -228,8 +227,6 @@ $num_posts = $count_posts->publish;
 
 if ($related_photos->have_posts()) :
     
-
-
 ?>
 <div class="photo-apparentee">
     <h3>Vous aimerez aussi</h3>

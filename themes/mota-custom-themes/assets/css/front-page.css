@@ -1,4 +1,4 @@
-body > div > img{
+body > div > img {
     width: 1470px;
     object-fit: cover;
 }
@@ -18,7 +18,6 @@ body > div > img{
     height: 100%;
     object-fit: cover;
 }
-
 
 .banner h1 {
     left: 15%;
@@ -79,35 +78,41 @@ body > div > img{
     border-radius: 10px;
 }
 
-  .filter form {
+.filter form {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-  }
-  .filter form .select-wrapper {
+}
+
+.filter form .select-wrapper {
     width: 70%;
     display: flex;
     margin-left: 178px;
     gap: 3em;
-  }
-  .categories {
+}
+
+.categories {
     margin-left: -90px;
-  }
-  .annee {
+}
+
+.annee {
     margin-right: -90px;
-  }
-  .filter form .select-wrapper .annee {
+}
+
+.filter form .select-wrapper .annee {
     margin-left: auto;
-  }
-  .filter form .js-example-basic-single {
+}
+
+.filter form .js-example-basic-single {
     width: 16.25rem;
     height: 2.5rem;
     background: #fff;
     padding-inline: 10px;
     border-radius: 10px;
-  }
-  .filter form .select2-container--default .select2-selection--single {
+}
+
+.filter form .select2-container--default .select2-selection--single {
     background-color: #fff;
     border: 1px solid #aaa;
     border-radius: 5px;
@@ -119,81 +124,84 @@ body > div > img{
     font-style: normal;
     font-weight: 500;
     text-transform: uppercase;
-  }
-  .filter form .select2-container--default .select2-selection--single .select2-selection__arrow {
+}
+
+.filter form .select2-container--default .select2-selection--single .select2-selection__arrow {
     height: 26px;
     position: absolute;
     top: 6px;
     right: 1px;
     width: 20px;
-  }
-  
-  .select2-search {
+}
+
+.select2-search {
     white-space: nowrap;
     min-height: 26px;
     width: 100%;
     height: 37px;
 }
 
-  /* Custom bibliotheque select2 */
-  .select2-container--default .select2-search--dropdown .select2-search__field {
+/* Custom bibliotheque select2 */
+.select2-container--default .select2-search--dropdown .select2-search__field {
     display: none;
-  }
+}
 
-  span.select2-results {
-    margin: 0px 0px 0px 0;
-    padding: 0 0px 0px 0px;
+span.select2-results {
+    margin: 0;
+    padding: 0;
     position: relative;
     overflow-x: hidden;
     overflow-y: auto;
     max-height: 200px;
-  }
+}
 
-  .select2-results li {
+.select2-results li {
     display: flex;
     list-style: none;
-    display: list-item;
     height: 25px;
     flex-direction: column;
     align-content: center;
 }
 
-  .select2-container--default .select2-results .select2-results__options {
+.select2-container--default .select2-results .select2-results__options {
     font-family: 'Poppins', sans-serif !important;
     font-size: 0.75rem;
     font-weight: 500;
-  }
+}
 
-  .select2-container--default .select2-results__option--selected {
+.select2-container--default .select2-results__option--selected {
     background-color: #FFF;
-  }
+}
 
-  .select2-container--default .select2-results__option--highlighted[aria-selected] {
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
     background-color: transparent !important;
     color: #FFF !important;
-  }
-  .select2-container--default .select2-results__option:hover {
+}
+
+.select2-container--default .select2-results__option:hover {
     background-color: #fe5858 !important;
     color: white !important;
-  }
-  .select2-container--default .select2-results__option:first-child {
-    display: none;
-  }
-  .select2-container--default .select2-results__option:not(:first-child)[aria-selected=true] {
-    background-color: #e00000 !important;
-    color: #fff ;
-  }
-  @media screen and (max-width: 1024px){
+}
 
+.select2-container--default .select2-results__option:first-child {
+    display: none;
+}
+
+.select2-container--default .select2-results__option:not(:first-child)[aria-selected=true] {
+    background-color: #e00000 !important;
+    color: #fff;
+}
+
+@media screen and (max-width: 1024px) {
     .banner h1 {
-        left: 3%;
+        left: 1em;
         top: 30%;
         font-size: 83px;
     }
 
     .filter form .select2-container--default .select2-selection--single {
         width: 10.25rem;
-      }
+    }
 
     .filter form .select-wrapper {
         width: 52%;
@@ -201,214 +209,226 @@ body > div > img{
         margin-left: 238px;
         gap: 2em;
     }
+
     .filter form .js-example-basic-single {
         width: 10.25rem;
     }
+
     .btn-load {
         left: 28em;
     }
 }
 
-  @media screen and (max-width: 769px){
-
-        .banner h1 {
-            left: 2%;
-            top: 35%;
-            font-size: 4em;
-        }
-        
-        /*** Page d'accueil ***/
-        .post-container img {
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .photos {
-            display: flex;
-            flex-direction: column;
-            flex-wrap: wrap;
-            width: 70%;
-            gap: 20px 37px;
-            justify-content: center;
-            margin-left: 12%;
-        }
-        
-        .post-container .overlay {
-          position: absolute; /* Position absolue pour positionner l'overlay par rapport au post-container */
-          top: 0;
-          left: 0;
-          width: 100%; /* Prend toute la largeur du post-container */
-          height: 99%; /* Prend toute la hauteur du post-container */
-          background-color: rgba(0, 0, 0, 0.7);
-          color: #fff;
-          opacity: 0;
-          transition: opacity 0.3s;
-          font-size: 0.875rem;
-          text-transform: uppercase;
-        }
-
-        .post-container:hover .overlay {
-          height: 100%;
-          width: 600px;
-        }
-        
-        .post-container .overlay .title {
-          position: absolute;
-          bottom: 12px;
-          left: 17px;
-          font-family: "Poppins", sans-serif;
-          font-weight: 500;
-        }
-        .post-container .overlay .categorie {
-          position: absolute;
-          bottom: 12px;
-          right: 23px;
-          font-family: "Space Mono", monospace;
-          font-weight: 400;
-        }
-        .post-container .overlay .reference {
-          position: absolute;
-          bottom: 12px;
-          left: 17px;
-          font-family: "Poppins", sans-serif;
-          font-weight: 500;
-        }
-        .post-container .overlay .eye-icon {
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          transform: translate(-50%, -50%);
-          font-size: 46px;
-        }
-        .post-container .overlay .eye-icon a {
-          color: #fff;
-        }
-        .post-container .overlay .expand-icon {
-          position: absolute;
-          top: 11px;
-          right: 18px;
-          font-size: 34px;
-        }
-        .post-container .overlay .expand-icon a {
-          color: #fff;
-        }
-        .btn-load {
-          left: 20em;
-        }
-        /*** Style filtres ***/
-        .container {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            max-width: 769px;
-            margin: auto;
-        }
-        .filter {
-            height: 200px;
-            display: flex;
-            align-items: center;
-        }
-        .filter form {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-        }
-        .filter form .select-wrapper {
-            width: 28%;
-            display: flex;
-            flex-direction: column;
-            margin-left: 32%;
-            gap: 8px;
-        }
-
-        .filter form .select-wrapper .annee {
-            margin-left: 0;
-        }
-
-        .categories {
-            margin-left: 0;
-        }
-
-        .filter form .js-example-basic-single {
-            width: 270px;
-            height: 43px;
-            background: #fff;
-            padding-inline: 10px;
-            border: 1.3px solid var(--Blues-Gray2, #B8BBC2);
-            border-radius: 8px;
-            font-family: "Poppins", sans-serif;
-        }
-        .filter form .select2-container--default .select2-selection--single {
-            background: var(--White, #FFF);
-            border: 1.3px solid var(--Blues-Gray2, #B8BBC2);
-            border-radius: 8px;
-            width: 16.25rem;
-            height: 2.5rem;
-            padding-top: 6px;
-            font-family: 'Poppins', sans-serif !important;
-            font-size: 12px;
-            font-style: normal;
-            font-weight: 500;
-            text-transform: uppercase;
-        }
-        .filter form .select2-container--default .select2-selection--single {
-            width: 17rem;
-          }
-
-        .filter form .select2-container--default .select2-selection--single .select2-selection__arrow {
-            height: 26px;
-            position: absolute;
-            top: 6px;
-            right: 1px;
-            width: 20px;
-        }
-    }
-  
-    @media screen and (max-width: 425px){
-
-        .banner h1 {
-            left: 2%;
-            top: 40%;
-            font-size: 35px;
-        }
-
-        .filter form .select-wrapper {
-            margin-left: 19%;
-        }
-
-        .post-container img {
-            margin-left: -10px;
-        }
-
-        .btn-load {
-            left: 19%;
-        }
+@media screen and (max-width: 769px) {
+    .banner h1 {
+        left: 0.7em;
+        top: 35%;
+        font-size: 4em;
     }
 
-    @media screen and (max-width: 375px){
-
-        .banner h1 {
-            left: 3%;
-            top: 40%;
-            font-size: 30px;
-        }
-
-        .filter form .select-wrapper {
-            margin-left: 13%;
-        }
-
-        .post-container:hover .overlay {
-            height: 100%;
-            width: 300px;
-            left: -10px;
-        }
-
-        .btn-load {
-            left: 14%;
-        }
+    /*** Page d'accueil ***/
+    .post-container img {
+        height: 100%;
+        object-fit: cover;
     }
+
+    .photos {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 70%;
+        gap: 20px 37px;
+        justify-content: center;
+        margin-left: 12%;
+    }
+
+    .post-container .overlay {
+        position: absolute; /* Position absolue pour positionner l'overlay par rapport au post-container */
+        top: 0;
+        left: 0;
+        width: 100%; /* Prend toute la largeur du post-container */
+        height: 99%; /* Prend toute la hauteur du post-container */
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        opacity: 0;
+        transition: opacity 0.3s;
+        font-size: 0.875rem;
+        text-transform: uppercase;
+    }
+
+    .post-container:hover .overlay {
+        height: 100%;
+        width: 600px;
+    }
+
+    .post-container .overlay .title {
+        position: absolute;
+        bottom: 12px;
+        left: 17px;
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+    }
+
+    .post-container .overlay .categorie {
+        position: absolute;
+        bottom: 12px;
+        right: 23px;
+        font-family: "Space Mono", monospace;
+        font-weight: 400;
+    }
+
+    .post-container .overlay .reference {
+        position: absolute;
+        bottom: 12px;
+        left: 17px;
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+    }
+
+    .post-container .overlay .eye-icon {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 46px;
+    }
+
+    .post-container .overlay .eye-icon a {
+        color: #fff;
+    }
+
+    .post-container .overlay .expand-icon {
+        position: absolute;
+        top: 11px;
+        right: 18px;
+        font-size: 34px;
+    }
+
+    .post-container .overlay .expand-icon a {
+        color: #fff;
+    }
+
+    .btn-load {
+        left: 20em;
+    }
+
+    /*** Style filtres ***/
+    .container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 769px;
+        margin: auto;
+    }
+
+    .filter {
+        height: 200px;
+        display: flex;
+        align-items: center;
+    }
+
+    .filter form {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .filter form .select-wrapper {
+        width: 28%;
+        display: flex;
+        flex-direction: column;
+        margin-left: 32%;
+        gap: 8px;
+    }
+
+    .filter form .select-wrapper .annee {
+        margin-left: 0;
+    }
+
+    .categories {
+        margin-left: 0;
+    }
+
+    .filter form .js-example-basic-single {
+        width: 270px;
+        height: 43px;
+        background: #fff;
+        padding-inline: 10px;
+        border: 1.3px solid var(--Blues-Gray2, #B8BBC2);
+        border-radius: 8px;
+        font-family:"Poppins", sans-serif;
+    }
+
+    .filter form .select2-container--default .select2-selection--single {
+        background: var(--White, #FFF);
+        border: 1.3px solid var(--Blues-Gray2, #B8BBC2);
+        border-radius: 8px;
+        width: 16.25rem;
+        height: 2.5rem;
+        padding-top: 6px;
+        font-family: 'Poppins', sans-serif !important;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+    
+    .filter form .select2-container--default .select2-selection--single {
+        width: 17rem;
+    }
+    
+    .filter form .select2-container--default .select2-selection--single .select2-selection__arrow {
+        height: 26px;
+        position: absolute;
+        top: 6px;
+        right: 1px;
+        width: 20px;
+    }
+    }
+    
+@media screen and (max-width: 425px) {
+    .banner h1 {
+        left: 0.9em;
+        top: 40%;
+        font-size: 35px;
+    }
+
+    .filter form .select-wrapper {
+        margin-left: 19%;
+    }
+
+    .post-container img {
+        margin-left: -10px;
+    }
+
+    .btn-load {
+        left: 19%;
+    }
+}
+    
+@media screen and (max-width: 375px) {
+    .banner h1 {
+        left: 1em;
+        top: 40%;
+        font-size: 30px;
+    }
+
+    .filter form .select-wrapper {
+        margin-left: 13%;
+    }
+
+    .post-container:hover .overlay {
+        height: 100%;
+        width: 300px;
+        left: -10px;
+    }
+
+    .btn-load {
+        left: 14%;
+    }
+}
 
 
   
